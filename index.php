@@ -40,7 +40,7 @@ require_once 'core/init.php';
                 </div>
                 <div class="panel-body">
                   <p id="response"></p>
-                  <form action="https://go.votomobile.org/api/v1/surveys" method="post">
+
                     <div class="form-group">
                       <label for="title" class="control-label col-md-3">Survey Title :</label>
                       <div class="col-md-6">
@@ -48,8 +48,8 @@ require_once 'core/init.php';
                       </div>
                     </div>
                      <input type="hidden" id="key" name="api_key" value="a1ec34beebc5ebd20468012c1"/><br>
-                    <input type="submit"  class="btn btn-lg btn-block btn-success" value="Create">
-                  </form>
+                    <input type="submit" onclick="createSurvey()"  class="btn btn-lg btn-block btn-success" value="Create">
+
                 </div>
                 <div class="panel-footer">
 
@@ -69,6 +69,7 @@ require_once 'core/init.php';
                            api_key: key
                            },
                            success: function(resp){
+                             //response not recieved
                              $("#response").html(resp['data']);
                            }
                            });
